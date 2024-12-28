@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		863D583C2D1FE069005F2D71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 863D58122D1FB687005F2D71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 863D58192D1FB687005F2D71;
+			remoteInfo = TDD;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		863D581A2D1FB687005F2D71 /* TDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		863D58382D1FE069005F2D71 /* TDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = TDD;
 			sourceTree = "<group>";
 		};
+		863D58392D1FE069005F2D71 /* TDDTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TDDTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		863D58172D1FB687005F2D71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		863D58352D1FE069005F2D71 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				863D581C2D1FB687005F2D71 /* TDD */,
+				863D58392D1FE069005F2D71 /* TDDTests */,
 				863D581B2D1FB687005F2D71 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				863D581A2D1FB687005F2D71 /* TDD.app */,
+				863D58382D1FE069005F2D71 /* TDDTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = 863D581A2D1FB687005F2D71 /* TDD.app */;
 			productType = "com.apple.product-type.application";
 		};
+		863D58372D1FE069005F2D71 /* TDDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 863D58402D1FE069005F2D71 /* Build configuration list for PBXNativeTarget "TDDTests" */;
+			buildPhases = (
+				863D58342D1FE069005F2D71 /* Sources */,
+				863D58352D1FE069005F2D71 /* Frameworks */,
+				863D58362D1FE069005F2D71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				863D583D2D1FE069005F2D71 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				863D58392D1FE069005F2D71 /* TDDTests */,
+			);
+			name = TDDTests;
+			packageProductDependencies = (
+			);
+			productName = TDDTests;
+			productReference = 863D58382D1FE069005F2D71 /* TDDTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					863D58192D1FB687005F2D71 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					863D58372D1FE069005F2D71 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 863D58192D1FB687005F2D71;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				863D58192D1FB687005F2D71 /* TDD */,
+				863D58372D1FE069005F2D71 /* TDDTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		863D58182D1FB687005F2D71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		863D58362D1FE069005F2D71 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		863D58342D1FE069005F2D71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		863D583D2D1FE069005F2D71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 863D58192D1FB687005F2D71 /* TDD */;
+			targetProxy = 863D583C2D1FE069005F2D71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		863D58262D1FB689005F2D71 /* Debug */ = {
@@ -302,6 +377,42 @@
 			};
 			name = Release;
 		};
+		863D583E2D1FE069005F2D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = APAFPPCAVJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sovansh.TDDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TDD";
+			};
+			name = Debug;
+		};
+		863D583F2D1FE069005F2D71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = APAFPPCAVJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sovansh.TDDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TDD";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +430,15 @@
 			buildConfigurations = (
 				863D58292D1FB689005F2D71 /* Debug */,
 				863D582A2D1FB689005F2D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		863D58402D1FE069005F2D71 /* Build configuration list for PBXNativeTarget "TDDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				863D583E2D1FE069005F2D71 /* Debug */,
+				863D583F2D1FE069005F2D71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
