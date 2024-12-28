@@ -12,6 +12,13 @@ protocol URLSessionProtocol {
 
 extension URLSession: URLSessionProtocol {}
 
+enum WebServiceError: Error{
+    case invalidURL
+    case noData
+    case parsingFailed
+    case unexpectedResponse
+    case networkError(Error)
+}
 
 final class RepositoryWebService {
     private let session: URLSessionProtocol
@@ -22,12 +29,25 @@ final class RepositoryWebService {
     
     func fetchRepositories() async throws -> [Repository] {
         guard let url = URL(string: "https://api.github.com/users/bharatlal087/repos") else {
-            throw URLError(.badURL)
+            throw WebServiceError.invalidURL
         }
-        
-        let (data,  _) = try await session.data(for: URLRequest(url: url))
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return try decoder.decode([Repository].self, from: data)
+        do {
+            let (data,  response) = try await session.data(for: URLRequest(url: url))
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                throw WebServiceError.unexpectedResponse
+            }
+            guard !data.isEmpty else {
+                throw WebServiceError.noData
+            }
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                return try decoder.decode([Repository].self, from: data)
+            } catch {
+                throw WebServiceError.parsingFailed
+            }
+        } catch {
+            throw WebServiceError.networkError(error)
+        }
     }
 }
